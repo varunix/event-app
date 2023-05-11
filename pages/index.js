@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image';
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,30 +22,36 @@ export default function Home() {
       </header>
 
       <main className={styles.main}>
-      <a href=''>
+        {data.map(event => (
+          <Link key={event.id} href={`/events/${event.id}`}>
+            <Image width={300} height={300} src={event.image} alt={event.title}/><h2>{event.title}</h2>
+            <p>{event.description}</p>
+          </Link>
+        ))}
+      <Link href='/events/london'>
         <img />
         <h1>Events in London</h1>
         <p>
         {' '}
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, atque. Voluptates, dolor saepe veritatis quia ipsam velit natus aspernatur id molestiae quae deserunt error repellat, impedit iusto ad? Aliquid praesentium, repudiandae nihil optio accusantium recusandae tempora corrupti omnis rerum! Earum optio unde, sapiente cumque repellendus saepe ipsum consequatur consectetur quaerat laborum debitis quisquam repudiandae asperiores dolore aperiam incidunt odit, placeat ratione aspernatur laudantium eius.
         </p>
-      </a>
-      <a href=''>
+      </Link>
+      <Link href='/events/sanfrancisco'>
         <img />
         <h1>Events in San Francisco</h1>
         <p>
         {' '}
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, atque. Voluptates, dolor saepe veritatis quia ipsam velit natus aspernatur id molestiae quae deserunt error repellat, impedit iusto ad? Aliquid praesentium, repudiandae nihil optio accusantium recusandae tempora corrupti omnis rerum! Earum optio unde, sapiente cumque repellendus saepe ipsum consequatur consectetur quaerat laborum debitis quisquam repudiandae asperiores dolore aperiam incidunt odit, placeat ratione aspernatur laudantium eius.
         </p>
-      </a>
-      <a href=''>
+      </Link>
+      <Link href='/events/barcelona'>
         <img />
         <h1>Events in Barcelona</h1>
         <p>
         {' '}
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, atque. Voluptates, dolor saepe veritatis quia ipsam velit natus aspernatur id molestiae quae deserunt error repellat, impedit iusto ad? Aliquid praesentium, repudiandae nihil optio accusantium recusandae tempora corrupti omnis rerum! Earum optio unde, sapiente cumque repellendus saepe ipsum consequatur consectetur quaerat laborum debitis quisquam repudiandae asperiores dolore aperiam incidunt odit, placeat ratione aspernatur laudantium eius.
         </p>
-      </a>
+      </Link>
       </main>
 
       <footer className={styles.footer}>
@@ -52,4 +59,14 @@ export default function Home() {
       </footer>
     </div>
   )
-}
+};
+
+export async function getServerSideProps() {
+  const { events_categories } = await import('../data/data.json');
+
+  return {
+      props: {
+          data: events_categories
+      }
+  }
+};
