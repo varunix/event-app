@@ -12,18 +12,6 @@ const EventsPage = ({ data }) => {
             <h2>{ev.title}</h2>
           </Link>
         ))}
-        <a href="">
-          <img />
-          <h1>Events in London</h1>
-        </a>
-        <a href="">
-          <img />
-          <h1>Events in San Francisco</h1>
-        </a>
-        <a href="">
-          <img />
-          <h1>Events in Barcelona</h1>
-        </a>
       </div>
     </div>
   );
