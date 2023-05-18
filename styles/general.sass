@@ -1,0 +1,70 @@
+header
+  height: 300px
+  padding: 20px
+  background: linear-gradient(280deg, #818b24, transparent)
+  >div
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    width: 100%
+    max-width: 1600px
+    margin: auto
+  .topNav
+    display: flex
+    justify-content: space-between
+    align-content: center
+    nav
+      display: flex
+      ul
+        text-decoration: none
+        list-style: none
+        gap: 15px
+        li
+          font-weight: 600
+          font-size: 16px
+  h1
+    width: 50%
+    font-size: 40px
+    text-transform: uppercase
+footer
+  background: #333
+  padding: 20px
+  text-align: center
+  color: #fff
+  margin-bottom: 0
+
+main
+  width: 100%
+  max-width: 1700px
+  margin: auto
+  padding: 100px 30px
+  display: flex
+  justify-content: center
+  min-height: 910px
+
+.home_body
+  display: flex
+  flex-direction: column
+  gap: 50px
+  .card
+    display: flex
+    flex-direction: row
+    gap: 30px
+    justify-content: center
+    align-items: center
+    align-content: center
+    flex-wrap: wrap
+    &:nth-child(even)
+      direction: rtl
+
+    .content
+      width: 50%
+  .image
+    min-width: 40%
+
+.about_us_list
+  display: flex
+  flex-direction: row
+  li
+    text-decoration: none
+    list-style: none
