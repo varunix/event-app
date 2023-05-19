@@ -22,7 +22,7 @@ header
         li
           font-weight: 600
           font-size: 16px
-  h1
+  .title
     width: 50%
     font-size: 40px
     text-transform: uppercase
@@ -35,7 +35,7 @@ footer
 
 main
   width: 100%
-  max-width: 1700px
+  max-width: 2000px
   margin: auto
   padding: 100px 30px
   display: flex
@@ -84,3 +84,19 @@ main
       text-transform: uppercase
       text-shadow: 1px 1px 20px black
       width: 100%
+
+.cat_events
+  width: 100%
+  .content
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 30px
+    width: calc(100% - (30px * 3))
+    justify-content: start
+    margin-left: auto
+    .card
+      display: flex
+      flex-direction: column
+      width: 70%
+      text-align: center
