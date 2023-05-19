@@ -64,7 +64,23 @@ main
 
 .about_us_list
   display: flex
-  flex-direction: row
+  flex-direction: column
   li
     text-decoration: none
     list-style: none
+
+.events_page
+  display: flex
+  flex-direction: row
+  gap: 20px
+  justify-content: center
+  .card
+    position: relative
+    h2
+      position: absolute
+      top: 50%
+      font-size: 34px
+      text-align: center
+      text-transform: uppercase
+      text-shadow: 1px 1px 20px black
+      width: 100%
